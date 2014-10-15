@@ -1,0 +1,70 @@
+NAME
+    Perinci::Sub::GetArgs::WebForm - Get subroutine arguments from web form
+
+VERSION
+    This document describes version 0.01 of Perinci::Sub::GetArgs::WebForm
+    (from Perl distribution Perinci-Sub-GetArgs-WebForm), released on
+    2014-10-15.
+
+SYNOPSIS
+     use Perinci::Sub::GetArgs::WebForm qw(get_args_from_webform);
+
+     my %params = $query->params; # from CGI, or from Plack::Request
+     my $args = get_args_from_webform(\%params);
+
+DESCRIPTION
+    This module provides get_args_from_webform(). This module is used by,
+    among others, Borang.
+
+FUNCTIONS
+  get_args_from_webform($form, $meta_is_normalized, $meta) -> any
+    Get subroutine arguments (%args) from web form.
+
+    Arguments ('*' denotes required arguments):
+
+    *   form* => *hash*
+
+        Either from "Plack::Request"'s "query_parameters()" or "CGI"'s
+        "params()".
+
+    *   meta => *hash*
+
+        Actually not required and not currently used.
+
+    *   meta_is_normalized => *bool* (default: 0)
+
+        Can be set to 1 if your metadata is normalized, to avoid duplicate
+        effort.
+
+    Return value:
+
+     (any)
+
+SEE ALSO
+    Perinci
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Perinci-Sub-GetArgs-WebForm>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/perlancar/perl-Perinci-Sub-GetArgs-WebForm>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-GetArgs-W
+    ebForm>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    perlancar <perlancar@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by perlancar@cpan.org.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
